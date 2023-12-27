@@ -18,6 +18,8 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
+        {{-- sweetaler --}}
+        @include('sweetalert::alert')
         <!-- Sidebar -->
         @include('components.backsite.menu-sidebar')
         <!-- End of Sidebar -->
