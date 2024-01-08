@@ -72,6 +72,8 @@
 <!-- END: Content-->
 @include('pages.backsite.master-data.dokter.modal.create')
 
+@include('pages.backsite.master-data.dokter.modal.edit')
+
 @endsection
 
 @push('after-script')
@@ -117,5 +119,9 @@
           },
         ],
       });
+
+      $('#edit').on('click', function(){
+        console.log('edit')
+      })
     </script>
 @endpush

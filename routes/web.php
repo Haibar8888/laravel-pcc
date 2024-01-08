@@ -36,7 +36,6 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite.', 'middleware' => ['aut
     })->name('dashboard');
 
     // dokter
-
     route::resource('/dokter',DokterController::class);
 
 });

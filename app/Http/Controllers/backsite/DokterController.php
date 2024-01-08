@@ -36,7 +36,9 @@ class DokterController extends Controller
                             Aksi
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button type="button" class="dropdown-item">Edit</button>
+                          <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModalEdit" id="edit">
+                            Edit
+                          </button>
                             <button type="button" class="dropdown-item">Delete</button>
                         </div>
                         </div>
@@ -54,6 +56,7 @@ class DokterController extends Controller
     public function create()
     {
         //
+        return abort(404);
     }
 
     /**
@@ -77,6 +80,7 @@ class DokterController extends Controller
     public function show(string $id)
     {
         //
+        return abort(404);
     }
 
     /**
