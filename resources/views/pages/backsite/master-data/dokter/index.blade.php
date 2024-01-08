@@ -126,11 +126,13 @@
     </script>
     <script type="text/javascript">
         $('body').on('click', '.editProduct', function () {
-            let id = $(this).data('id');
+            var id = $(this).data('id');
             $.get("{{ route('backsite.dokter.index') }}" +'/' + id +'/edit', function (data) {
                 $('.kode_dokter').val(data.kode_dokter)
                 $('.nama').val(data.nama)
             })
+            let action = $('#myform').attr('action') + '/' +id;
+            $('#myform').attr('action', action);
         })
 
         // $('#savedata').click(function (e) {

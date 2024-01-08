@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-           <form method="POST" action="{{ route('backsite.dokter.update') }}" enctype="multipart/form-data">
+           <form method="POST" action="{{ route('backsite.dokter.update') }}" id="myform" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">
