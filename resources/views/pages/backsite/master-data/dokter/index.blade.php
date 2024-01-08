@@ -84,7 +84,7 @@
     <!-- Page level custom scripts -->
     <script src="{{asset("js/demo/datatables-demo.js")}}"></script>
 
-    <script>
+    <script type="text/javascript">
     // AJAX DataTable
       var datatable = $('#dataTable').DataTable({
         processing: true,
@@ -123,5 +123,37 @@
       $('#edit').on('click', function(){
         console.log('edit')
       })
+    </script>
+    <script type="text/javascript">
+        $('body').on('click', '.editProduct', function () {
+            let id = $(this).data('id');
+            $.get("{{ route('backsite.dokter.index') }}" +'/' + id +'/edit', function (data) {
+                $('.kode_dokter').val(data.kode_dokter)
+                $('.nama').val(data.nama)
+            })
+        })
+
+        // $('#savedata').click(function (e) {
+        // e.preventDefault();
+        // $(this).html('Sending..');
+
+        // $.ajax({
+        //   data: $('#productForm').serialize(),
+        //   url: "{{ route('backsite.dokter.store') }}",
+        //   type: "POST",
+        //   dataType: 'json',
+        //   success: function (data) {
+
+        //       $('#productForm').trigger("reset");
+        //       $('#ajaxModelexa').modal('hide');
+        //       table.draw();
+
+        //   },
+        //   error: function (data) {
+        //       console.log('Error:', data);
+        //       $('#savedata').html('Save Changes');
+        //   }
+      });
+    });
     </script>
 @endpush

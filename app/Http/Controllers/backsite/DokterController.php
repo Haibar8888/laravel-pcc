@@ -36,10 +36,10 @@ class DokterController extends Controller
                             Aksi
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModalEdit" id="edit">
+                          <a href="javascript:void(0)"  class="dropdown-item editProduct" data-id="'.$dokter->id.'" data-toggle="modal" data-target="#exampleModalEdit">
                             Edit
-                          </button>
-                            <button type="button" class="dropdown-item">Delete</button>
+                          </a>
+                            <a  href="javascript:void(0)" class="dropdown-item deleteProduct" data-id="'.$dokter->id.'">Delete</a>
                         </div>
                         </div>
                     ';
@@ -86,17 +86,21 @@ class DokterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         //
+        $dokter = Dokter::findOrFail($id);
+        return response()->json($dokter);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update($request, Dokter $dokter)
     {
         //
+        dd($dokter);
+
     }
 
     /**

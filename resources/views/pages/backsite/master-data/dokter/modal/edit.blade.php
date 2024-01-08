@@ -9,21 +9,21 @@
         </button>
       </div>
       <div class="modal-body">
-           <form method="POST" action="" enctype="multipart/form-data">
+           <form method="POST" action="{{ route('backsite.dokter.update') }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">
                 <label for="kode_dokter">Kode Dokter</label>
-                <input type="text" class="form-control" id="kode_dokter" name="kode_dokter" required>
+                <input type="text" class="form-control kode_dokter" id="kode_dokter" name="kode_dokter" required>
             </div>
             <div class="form-group">
                 <label for="nama">Nama Dokter</label>
-                <input type="text" class="form-control" id="nama" name="nama" required>
+                <input type="text" class="form-control nama" id="nama" name="nama" required>
             </div>
             <div class="">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="submit" class="btn btn-primary" id="savedata">Edit</button>
                     </div>
                 </div>
             </div>
